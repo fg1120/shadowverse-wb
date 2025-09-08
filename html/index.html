@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/body.css">
+    <title>Shadowverse 対戦状況把握ツール</title>
+</head>
+
+<body>
+    <div id="headerButtons">
+        <div id="classButtons">
+            <button id="_01_elfButton">エルフ</button>
+            <button id="_02_royalButton">ロイヤル</button>
+            <button id="_03_witchButton">ウィッチ</button>
+            <button id="_04_dragonButton">ドラゴン</button>
+            <button id="_05_nightmareButton">ナイトメア</button>
+            <button id="_06_bishopButton">ビショップ</button>
+            <button id="_07_nemesisButton">ネメシス</button>
+        </div>
+        <button id="allResetButton">全リセット</button>
+
+    </div>
+
+    <div id="allCardDiv"></div>
+
+    <script src="../scripts/_01_setCardNamesArray.js"></script>
+    <script src="../scripts/_02_getMenuButtons.js"></script>
+    <script src="../scripts/_03_1_function_showCards.js"></script>
+    <script src="../scripts/_03_2_function_getElements.js"></script>
+    <script src="../scripts/_03_3_function_setResetButtonEvent.js"></script>
+    <script src="../scripts/_03_5_function_changeColor.js"></script>
+    <script src="../scripts/_03_4_function_setIncDecButtonEvents.js"></script>
+    <script src="../scripts/_04_addClassButtonEvent.js"></script>
+</body>
+
+</html>

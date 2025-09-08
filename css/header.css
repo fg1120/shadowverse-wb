@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+#headerButtons{
+    display: flex;
+}
+#classButtons button {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    background-size: cover;
+
+    color: white;
+    font-size: 15px;
+    font-weight: 1000;
+
+
+    /*輪郭をつける*/
+    text-shadow:
+    -2px -2px 0 black,  /* 左上 */
+     2px -2px 0 black,  /* 右上 */
+    -2px  2px 0 black,  /* 左下 */
+     2px  2px 0 black;  /* 右下 */
+}
+
+#_01_elfButton {
+    background-image: url('../pics/class/01_elf.avif');
+}
+
+#_02_royalButton {
+    background-image: url('../pics/class/02_royral.avif');
+}
+
+#_03_witchButton {
+    background-image: url('../pics/class/03_witch.avif');
+}
+
+#_04_dragonButton {
+    background-image: url('../pics/class/04_dragon.avif');
+}
+
+#_05_nightmareButton {
+    background-image: url('../pics/class/05_nightmare.avif');
+}
+
+#_06_bishopButton {
+    background-image: url('../pics/class/06_bishop.avif');
+}
+
+#_07_nemesisButton {
+    background-image: url('../pics/class/07_nemesis.avif');
+}
+
+#allResetButton {
+    width: 200px;    
+    height: 100px;
+    margin: 5px;
+    background-color: #64f38c;
+}

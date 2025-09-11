@@ -1,7 +1,10 @@
 console.log("_03_1_function_showCards.js 読み込み");
 
+let currentClassId = '';
+
 function showCards(className, cardNamesArray) {
-    console.log("3-1showCards()実行");
+
+    console.log(`3-1 showCards()実行 - クラス番号: ${currentClassId}`);
 
     const allCardDiv = document.getElementById('allCardDiv');
 
@@ -15,11 +18,11 @@ function showCards(className, cardNamesArray) {
               <div class="eachCardDiv">
                   <div class="upperDiv">
                       <img class="cardImg" src="pics/${className}/${cardName}.png">
-                      <button class="eachResetButton">リセット</button><br>
+                      <button class="eachCounterResetButton">枚数リセット</button><br>
                   </div>
                   <div class="lowerDiv">
                       <button class="increaseButton">+</button>
-                      <input type="number" class="cardCounter" value="0" readonly>
+                      <input type="number" class="cardCounterInput" value="0" readonly>
                       <button class="decreaseButton">-</button>
                   </div>
               </div>
@@ -29,8 +32,12 @@ function showCards(className, cardNamesArray) {
         allCardDiv.innerHTML += newCardHTML;
     });
 
+    //勝敗管理用の
+    opponentClassDiv.innerText = "対 " + classMap[currentClassId];
+
     getElements(); //3-2
-    setResetButtonEvent(); //3-3
+    setCounterResetButtonEvent(); //3-3
     setColorChangeEvents(); //3-4
     setIncDecButtonEvents(); //3-5
+
 }

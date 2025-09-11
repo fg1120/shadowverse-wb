@@ -1,23 +1,38 @@
-console.log("_03_5_function_changeColor.js.js 読み込み");
+console.log("_03_5_function_changeColor.js 読み込み");
 
-
+/**********************************************************************/
 // カウンターの色を変更する共通関数
 function highlightCounter(button, color) {
 
   console.log("highlightCounter() 実行");
 
   const parentCard = button.closest('.eachCardDiv');
-  const cardCounter = parentCard.querySelector('.cardCounter');
+  const cardCounterInput = parentCard.querySelector('.cardCounterInput');
 
   // 背景色を変更
-  cardCounter.style.backgroundColor = color;
+  cardCounterInput.style.backgroundColor = color;
 
-  // 300ミリ秒後に元の色に戻す
+  // 30ミリ秒後に元の色に戻す
   setTimeout(() => {
     // スタイルをリセット
-    cardCounter.style.backgroundColor = '';
+    cardCounterInput.style.backgroundColor = '';
   }, 30);
 }
+/**********************************************************************/
+
+//全リセットボタンで発動させる関数
+function setAllCounterResetButtonEvent() {
+
+  // すべてのeachCounterResetButtonをループ
+  eachCounterResetButtons.forEach(button => {
+    // 新しいマウスイベントを作成
+    const mousedownEvent = new MouseEvent('mousedown');
+
+    // イベントを各ボタンで発火させる
+    button.dispatchEvent(mousedownEvent);
+  });
+}
+
 /**********************************************************************/
 
 function setColorChangeEvents() {
@@ -25,30 +40,24 @@ function setColorChangeEvents() {
 
   // イベントリスナーを設定
 
-  //allResetButton→すべてのeachResetButtonを発動
-  allResetButton.addEventListener('mousedown', () => {
-    // すべてのeachResetButtonをループ
-    eachResetButtons.forEach(button => {
-      // 新しいマウスイベントを作成
-      const mousedownEvent = new MouseEvent('mousedown');
+  //allCounterResetButton→すべてのeachCounterResetButtonを発動
+  allCounterResetButton.addEventListener('mousedown', setAllCounterResetButtonEvent);
 
-      // イベントを各ボタンで発火させる
-      button.dispatchEvent(mousedownEvent);
-    });
+  //個別リセットボタン
+  eachCounterResetButtons.forEach(button => {
+    button.addEventListener('mousedown',()=>{
+      highlightCounter(button, '#64f38c')// 緑色
+    })
   });
 
-  eachResetButtons.forEach(button => {
-    button.addEventListener('mousedown', () => {
-      highlightCounter(button, '#64f38c'); // 緑色
-    });
-  });
-
+  //＋ボタン
   increaseButtons.forEach(button => {
     button.addEventListener('mousedown', () => {
       highlightCounter(button, '#f56d6d'); // 赤色
     });
   });
 
+  //－ボタン
   decreaseButtons.forEach(button => {
     button.addEventListener('mousedown', () => {
       highlightCounter(button, '#719ff8'); // 青色

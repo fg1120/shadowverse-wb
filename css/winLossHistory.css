@@ -1,0 +1,174 @@
+:root {
+    --sidebarDiv-width: 320px;
+}
+
+/***********************************************************************/
+#winLossControllDiv{
+    margin: 5px;
+    padding: 5px;
+    width: 120px;
+    height: 90px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+#winButton,
+#lossButton {
+    padding: 2px;
+    width: 50px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#winButton{
+    background-color: #d9534f40;
+}
+#lossButton{
+    background-color: #337ab740;
+}
+
+/***********************************************************************/
+#mainDiv {
+    transition: margin-right 0.3s ease-in-out;
+}
+
+#mainDiv.winLossHitory-visible {
+    margin-right: var(--sidebarDiv-width);
+}
+
+/***********************************************************************/
+/*サイドバー用*/
+#sidebarDiv {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: var(--sidebarDiv-width);
+    height: 100%;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+#sidebarDiv.hidden {
+    /*右にずらして隠す*/
+    transform: translateX(var(--sidebarDiv-width));
+}
+
+#toggleButton {
+    width: 30px;
+    height: 200px;
+    text-align: center;
+    text-wrap: wrap;
+    font-size: 15px;
+
+    position: absolute;
+    top: 0;
+    left: -30px;
+    padding: 0;
+    border: 1px solid #ccc;
+    background-color: #e65151;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#winLossSummaryDiv {
+    /*ドロップダウンリストと通算勝敗数のテキスト*/
+    
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#recordCount {
+    /*ドロップダウンリスト*/
+    font-size: 16px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#recordListDiv {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+}
+
+.time-entry-container {
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 15px;
+}
+
+.win-text {
+    color: #d9534f;
+    /* 鮮やかな赤色 */
+}
+
+.loss-text {
+    color: #337ab7;
+    /* 鮮やかな青色 */
+}
+
+.delete-button {
+    background-color: #3a3a3a88;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#clearAllRecordButton {/*履歴全削除ボタン*/
+    position:absolute;
+    right:0;
+    margin:10px;
+    height: 40px;
+}
+
+/*****************************************************************/
+/* time-entry-containerに背景色を一時的に追加するためのクラス */
+.highlight-win {
+    animation: highlight-win-anim 1.0s ease-in;
+}
+
+.highlight-loss {
+    animation: highlight-loss-anim 1.0s ease-in;
+}
+
+/* 勝ち記録のアニメーション定義 */
+@keyframes highlight-win-anim {
+    from {
+        background-color: #d9534f40;
+    }
+
+    /* 薄い赤 */
+    to {
+        background-color: transparent;
+    }
+}
+
+/* 負け記録のアニメーション定義 */
+@keyframes highlight-loss-anim {
+    from {
+        background-color: #337ab740;
+    }
+
+    /* 薄い青 */
+    to {
+        background-color: transparent;
+    }
+}

@@ -3,40 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/body.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/winLossHistory.css">
     <title>Shadowverse 対戦状況把握ツール</title>
 </head>
 
 <body>
-    <div id="headerButtons">
-        <div id="classButtons">
-            <button id="_01_elfButton">エルフ</button>
-            <button id="_02_royalButton">ロイヤル</button>
-            <button id="_03_witchButton">ウィッチ</button>
-            <button id="_04_dragonButton">ドラゴン</button>
-            <button id="_05_nightmareButton">ナイトメア</button>
-            <button id="_06_bishopButton">ビショップ</button>
-            <button id="_07_nemesisButton">ネメシス</button>
-        </div>
-        <button id="allResetButton">全リセット</button>
+    <div id="mainDiv">
+        <div id="headerButtons">
+            <div id="classButtons">
+                <button id="_01_elfButton">エルフ</button>
+                <button id="_02_royalButton">ロイヤル</button>
+                <button id="_03_witchButton">ウィッチ</button>
+                <button id="_04_dragonButton">ドラゴン</button>
+                <button id="_05_nightmareButton">ナイトメア</button>
+                <button id="_06_bishopButton">ビショップ</button>
+                <button id="_07_nemesisButton">ネメシス</button>
+                <button id="allCounterResetButton">全カード枚数リセット</button>
+            </div>
 
+            <div id="winLossControllDiv">
+                <p>勝敗を記録する</p>
+                <div id="opponentClassDiv">※クラスを選択してください</div>
+                <button id="winButton">勝ち</button>
+                <button id="lossButton">負け</button>
+            </div>
+        </div>
+
+        <div id="allCardDiv"></div>
     </div>
 
-    <div id="allCardDiv"></div>
+    <div id="sidebarDiv" class="hidden">
 
-    <script>  console.log("3-1showCards()実行");</script>
-    <script src="./javascript/_01_setCardNamesArray.js"></script>
-    <script src="./javascript/_02_getMenuButtons.js"></script>
-    <script src="./javascript/_03_1_function_showCards.js"></script>
-    <script src="./javascript/_03_2_function_getElements.js"></script>
-    <script src="./javascript/_03_3_function_setResetButtonEvent.js"></script>
-    <script src="./javascript/_03_5_function_changeColor.js"></script>
-    <script src="./javascript/_03_4_function_setIncDecButtonEvents.js"></script>
-    <script src="./javascript/_04_addClassButtonEvent.js"></script>
+        <button id="toggleButton">&lt;&lt;戦績を表示する</button>
+
+        <div id="winLossSummaryDiv">
+            <select id="recordCountSelect">
+                <option value="10">10戦まで</option>
+                <option value="20" selected>20戦まで</option>
+                <option value="30">30戦まで</option>
+                <option value="40">40戦まで</option>
+                <option value="50">50戦まで</option>
+                <option value="60">60戦まで</option>
+                <option value="70">70戦まで</option>
+                <option value="80">80戦まで</option>
+                <option value="90">90戦まで</option>
+                <option value="100">100戦まで</option>
+            </select>
+            <span id="summarySpan"></span>
+        </div>
+        <div id="recordListDiv"></div>
+        <button id="clearAllRecordButton">履歴を全削除</button>
+    </div>
+
+    <script src="javascript/_01_setCardNamesArray.js"></script>
+    <script src="javascript/_02_getMenuButtons.js"></script>
+    <script src="javascript/_03_1_function_showCards.js"></script>
+    <script src="javascript/_03_2_function_getElements.js"></script>
+    <script src="javascript/_03_3_function_setCounterResetButtonEvent.js"></script>
+    <script src="javascript/_03_4_function_setIncDecButtonEvents.js"></script>
+    <script src="javascript/_03_5_function_changeColor.js"></script>
+    <script src="javascript/_04_addClassButtonEvent.js"></script>
+    <script src="javascript/_05_winLossHistory.js"></script>
 </body>
 
-
 </html>
-
-

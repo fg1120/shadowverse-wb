@@ -12,7 +12,7 @@ function changeCounterNum(button, delta) {
   const parentDiv = button.closest('.lowerDiv');
 
   // 親要素内のテキストボックスを取得
-  const numberInput = parentDiv.querySelector('.cardCounter');
+  const numberInput = parentDiv.querySelector('.cardCounterInput');
 
   // 現在の値を取得し、整数に変換
   let currentValue = parseInt(numberInput.value, 10);

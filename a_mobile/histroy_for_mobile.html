@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./mobile.css">
+    <title>Shadowverse 勝敗履歴記録ツール スマホ用</title>
+</head>
+
+<body>
+    <div id="mainDiv">
+        
+    </div>
+
+
+        <button id="toggleButton">&lt;&lt;戦績を表示する</button>
+
+        <div id="winLossSummaryDiv">
+            <select id="recordCountSelect">
+                <option value="10">10戦まで</option>
+                <option value="20" selected>20戦まで</option>
+                <option value="30">30戦まで</option>
+                <option value="40">40戦まで</option>
+                <option value="50">50戦まで</option>
+                <option value="60">60戦まで</option>
+                <option value="70">70戦まで</option>
+                <option value="80">80戦まで</option>
+                <option value="90">90戦まで</option>
+                <option value="100">100戦まで</option>
+            </select>
+            <span id="summarySpan"></span>
+        </div>
+        <div id="recordListDiv"></div>
+        <a href="https://x.com/fg1120_h" target="_blank">製作者(むむ)のX</a>
+        <button id="clearAllRecordButton">履歴を全削除</button>
+    </div>
+
+    <script src="./javascript/_01_setCardNamesArray.js"></script>
+    <script src="./javascript/_02_getMenuButtons.js"></script>
+    <script src="./javascript/_03_1_function_showCards.js"></script>
+    <script src="./javascript/_03_2_function_getElements.js"></script>
+    <script src="./javascript/_03_3_function_setCounterResetButtonEvent.js"></script>
+    <script src="./javascript/_03_4_function_setIncDecButtonEvents.js"></script>
+    <script src="./javascript/_03_5_function_changeColor.js"></script>
+    <script src="./javascript/_04_addClassButtonEvent.js"></script>
+    <script src="./javascript/_05_winLossHistory.js"></script>
+</body>
+
+</html>
